@@ -3,16 +3,33 @@ import Cafe from "../assets/Cafe.png";
 import TigerHome from "../assets/TigerHome.png";
 
 const HomeSelf = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 80px;
-  top: 130px;
+  width: 1080px;
+  margin: 330px auto; //위아래는 0 왼쪽오른쪽은 auto
+
+  hr {
+    border: dotted;
+    color: gray;
+  }
 `;
 
+const TextContainer = styled.div`
+  margin-top: 150px;
+  font-size: 30px;
+`;
+
+const ImgSelf = styled.div`
+  margin-top: 41px;
+  display: flex;
+`;
 const HomeTitle = styled.h1`
   font-weight: 900;
   user-select: none;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 900px;
 `;
 
 const Button = styled.button`
@@ -33,9 +50,7 @@ const Button = styled.button`
 `;
 
 const ImgContainer = styled.div`
-  position: absolute;
-  margin-top: 63px;
-  margin-left: ${(props) => (props.ImgLeft ? "0px" : "549px")};
+  margin-left: ${(props) => (props.ImgLeft ? "0px" : "17px")};
 `;
 
 const LeftImgBox = styled.div`
@@ -53,7 +68,7 @@ const RightImgBox = styled.div`
 const ImgTextBox = styled.div`
   font-family: Roboto;
   top: 682.11px;
-  margin-top: ${(props) => (props.TextTop ? "42px" : "0px")};
+  margin-top: ${(props) => (props.TextTop ? "32px" : "0px")};
   line-height: ${(props) => (props.TextHeight ? "45px" : "0px")};
   font-weight: ${(props) => (props.TextWeight ? "400" : "900")};
 `;
@@ -77,36 +92,42 @@ const HostButton = styled.button`
 function Home() {
   return (
     <HomeSelf>
-      <HomeTitle>호랑님의 숙소</HomeTitle>
+      <TextContainer>
+        <HomeTitle>호랑님의 숙소</HomeTitle>
+      </TextContainer>
       {/* 버튼 */}
-      <Button ButtonWidth ButtonLeft>
-        숙소 유형
-      </Button>
-      <Button ButtonWidth={false} ButtonLeft={false}>
-        요금
-      </Button>
-      {/* 이미지& 가격 1번째 박스*/}
-      <ImgContainer ImgLeft>
-        <LeftImgBox img></LeftImgBox>
-        <ImgTextBox TextHeight TextTop TextWeight>
-          <HostButton>슈퍼 호스트</HostButton>
-          호랑이가 사는 집
-        </ImgTextBox>
-        <ImgTextBox TextHeight={false} TextTop={false} TextWeight={false}>
-          ₩121,277 /1박
-        </ImgTextBox>
-      </ImgContainer>
-      {/* 이미지&가격 2번째 박스 */}
-      <ImgContainer ImgLeft={false}>
-        <RightImgBox img={false}></RightImgBox>
-        <ImgTextBox TextHeight TextTop TextWeight>
-          <HostButton>슈퍼 호스트</HostButton>
-          호랑이가 자주 가는 카페
-        </ImgTextBox>
-        <ImgTextBox TextHeight={false} TextTop={false} TextWeight={false}>
-          ₩121,277 /1박
-        </ImgTextBox>
-      </ImgContainer>
+      <ButtonContainer>
+        <Button ButtonWidth ButtonLeft>
+          숙소 유형
+        </Button>
+        <Button ButtonWidth={false} ButtonLeft={false}>
+          요금
+        </Button>
+      </ButtonContainer>
+      <ImgSelf>
+        {/* 이미지& 가격 1번째 박스*/}
+        <ImgContainer ImgLeft>
+          <LeftImgBox img></LeftImgBox>
+          <ImgTextBox TextHeight TextTop TextWeight>
+            <HostButton>슈퍼 호스트</HostButton>
+            호랑이가 사는 집
+          </ImgTextBox>
+          <ImgTextBox TextHeight={false} TextTop={false} TextWeight={false}>
+            ₩121,277 /1박
+          </ImgTextBox>
+        </ImgContainer>
+        {/* 이미지&가격 2번째 박스 */}
+        <ImgContainer ImgLeft={false}>
+          <RightImgBox img={false}></RightImgBox>
+          <ImgTextBox TextHeight TextTop TextWeight>
+            <HostButton>슈퍼 호스트</HostButton>
+            호랑이가 자주 가는 카페
+          </ImgTextBox>
+          <ImgTextBox TextHeight={false} TextTop={false} TextWeight={false}>
+            ₩121,277 /1박
+          </ImgTextBox>
+        </ImgContainer>
+      </ImgSelf>
     </HomeSelf>
   );
 }

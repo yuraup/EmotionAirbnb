@@ -1,6 +1,8 @@
 import Header from "./components/Header";
 import Home from "./components/Home";
 import styled from "@emotion/styled";
+import Map from "./components/Map";
+
 const Self = styled.div`
   background: #ffffff;
 `;
@@ -10,6 +12,7 @@ function App() {
     <Self>
       <div>
         <Header />
+        <Map />
         <Home />
       </div>
     </Self>
