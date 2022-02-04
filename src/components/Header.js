@@ -2,36 +2,31 @@ import styled from "@emotion/styled";
 import Logo from "../assets/Logo.svg";
 
 const LogoSelf = styled.div`
-  position: absolute;
   width: 100%;
   height: 80px;
-  left: 0px;
-  top: 0px;
   background: #ffffff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
 `;
 
 const LogoContainer = styled.div`
-  position: absolute;
-  width: 101px;
+  display: flex;
+  width: 106px;
   height: 32px;
-  left: 80px;
-  top: 24px;
+  margin-left: 80px;
+  }
 `;
-
-const LogoImage = styled.div`
-  position: absolute;
+const LogoImg = styled.div`
   background: url(${Logo}) center no-repeat;
-  width: 30px;
+  width: 50px;
   height: 32px;
-  transition: all 700ms ease-in-out 100ms;
 `;
-
 const LogoText = styled.a`
-  position: absolute;
   width: 68px;
   height: 24px;
   left: 40px;
+  margin: 5px 0 0 6px;
   margin-top: 5px;
   font-family: Brown;
   font-style: normal;
@@ -47,7 +42,7 @@ function Header() {
     <>
       <LogoSelf>
         <LogoContainer>
-          <LogoImage />
+          <LogoImg />
           <LogoText>airbnb</LogoText>
         </LogoContainer>
       </LogoSelf>
