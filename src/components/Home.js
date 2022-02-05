@@ -35,8 +35,6 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
   width: ${(props) => (props.ButtonWidth ? "100px" : "70px")};
   height: 36px;
-  left: 24px;
-  top: 204px;
   background: #ffffff;
   margin-left: ${(props) => (props.ButtonLeft ? "0px" : "8px")};
   padding: 9.5px 16px;

@@ -4,14 +4,12 @@ import MapImg from "../assets/Map.png";
 import Before from "../assets/Before.png";
 import After from "../assets/After.png";
 
-const MapSelf = styled.div`
-  color: #f53851;
-`;
 const MapContainer = styled.div`
   width: 1080px;
   height: auto;
   margin: 147px auto; //위아래는 0 왼쪽오른쪽은 auto
   display: flex;
+  color: #f53851;
 `;
 
 const HoverBox = styled.div`
@@ -27,7 +25,7 @@ const HoverBox = styled.div`
     font-size: 32px;
     line-height: 40px;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 30px;
   }
 `;
 
@@ -42,22 +40,20 @@ const MapBox = styled.div`
 function Map() {
   const [ImgHover, setImgHover] = useState(false);
   return (
-    <MapSelf>
-      <MapContainer>
-        <HoverBox>
-          <div
-            onMouseOver={() => setImgHover(true)}
-            onMouseOut={() => setImgHover(false)}
-          >
-            <img src={ImgHover ? After : Before} alt="이미지 호버" />
-            <p>2022 새해 복 많이 받으세요</p>
-          </div>
-        </HoverBox>
-        <MapBox>
-          <img src={MapImg} alt="지도"></img>
-        </MapBox>
-      </MapContainer>
-    </MapSelf>
+    <MapContainer>
+      <HoverBox>
+        <div
+          onMouseOver={() => setImgHover(true)}
+          onMouseOut={() => setImgHover(false)}
+        >
+          <img src={ImgHover ? After : Before} alt="이미지 호버" />
+          <p>2022 새해 복 많이 받으랑</p>
+        </div>
+      </HoverBox>
+      <MapBox>
+        <img src={MapImg} alt="지도"></img>
+      </MapBox>
+    </MapContainer>
   );
 }
 
